@@ -23,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Positioned(
             bottom: 440,
             left: 100,
-            child: Hero(tag: "img",
+            child: Hero(
+              tag: "img",
               child: SvgPicture.asset(
                 'assets/login/logoo.svg',
                 width: 185,
@@ -61,29 +62,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 30,
                     ),
-                    MyButton(texsize: 16,
+                    MyButton(
+                        texsize: 16,
+                        width: 260,
+                        height: 48,
                         isoutline: true,
                         onPressed: () {
-                         Navigator.push(
-                context,
-                PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) => LoginScreen(),
-                  transitionDuration: Duration(seconds: 2),
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    const begin = Offset(0.0, 1.0);
-                    const end = Offset.zero;
-                    const curve = Curves.ease;
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      LoginScreen(),
+                              transitionDuration: Duration(seconds: 2),
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                const begin = Offset(0.0, 1.0);
+                                const end = Offset.zero;
+                                const curve = Curves.ease;
 
-                    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-                    var offsetAnimation = animation.drive(tween);
+                                var tween = Tween(begin: begin, end: end)
+                                    .chain(CurveTween(curve: curve));
+                                var offsetAnimation = animation.drive(tween);
 
-                    return SlideTransition(
-                      position: offsetAnimation,
-                      child: child,
-                    );
-                  },
-                ),
-              );
+                                return SlideTransition(
+                                  position: offsetAnimation,
+                                  child: child,
+                                );
+                              },
+                            ),
+                          );
                         },
                         text: "LOGIN",
                         col: buttoncolor,
@@ -91,27 +99,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 25,
                     ),
-                    MyButton(texsize: 16,
-                      onPressed: () { Navigator.push(
-                context,
-                PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) => SignupScreen(),
-                  transitionDuration: Duration(seconds: 2),
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    const begin = Offset(0.0, 1.0);
-                    const end = Offset.zero;
-                    const curve = Curves.ease;
+                    MyButton(
+                      width: 260,
+                      height: 48,
+                      texsize: 16,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    SignupScreen(),
+                            transitionDuration: Duration(seconds: 2),
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
 
-                    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-                    var offsetAnimation = animation.drive(tween);
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
+                              var offsetAnimation = animation.drive(tween);
 
-                    return SlideTransition(
-                      position: offsetAnimation,
-                      child: child,
-                    );
-                  },
-                ),
-              );},
+                              return SlideTransition(
+                                position: offsetAnimation,
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
+                      },
                       text: "SIGN UP",
                       col: Colors.white,
                       textcolor: buttoncolor,

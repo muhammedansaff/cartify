@@ -118,7 +118,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             icon: Icons.lock,
                             hinttext: "Password",
                           ),
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             children: [
                               SizedBox(
@@ -132,8 +134,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               const Text(
                                 "Remember me",
-                                style:
-                                    TextStyle(fontFamily: "ansaf", fontSize: 12),
+                                style: TextStyle(
+                                    fontFamily: "ansaf", fontSize: 12),
                               ),
                               SizedBox(
                                 width: 45,
@@ -151,8 +153,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 80,
                           ),
                           _isLoading
-                              ? CircularProgressIndicator(color: buttoncolor,) // Show CircularProgressIndicator while loading
+                              ? CircularProgressIndicator(
+                                  color: buttoncolor,
+                                ) // Show CircularProgressIndicator while loading
                               : MyButton(
+                                  width: 260,
+                                  height: 48,
                                   onPressed: _submitForm,
                                   text: "LOGIN",
                                   col: buttoncolor,
@@ -175,7 +181,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           SvgPicture.asset(
                             'assets/login/google.svg',
-                            
                             width: 96,
                             height: 38,
                           ),
@@ -197,7 +202,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const SignupScreen(),
+                                      builder: (context) =>
+                                          const SignupScreen(),
                                     ),
                                   );
                                 },

@@ -130,7 +130,8 @@ class _SignupScreenState extends State<SignupScreen> { void _submitForm() {
                           SizedBox(
                             height: 35,
                           ),_isLoading?CircularProgressIndicator(color: buttoncolor,):
-                          MyButton(
+                          MyButton( width: 260,
+        height: 48,
                             onPressed:(){_submitForm();},
                             text: "Sign Up",
                             col: buttoncolor,

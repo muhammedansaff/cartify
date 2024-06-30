@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-   const mainScreen(),const Favourites(),const CartScreen(),const ProfileScreen()
+   const MainScreen(),const Favourites(),const CartScreen(),const ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -56,7 +56,7 @@ class _BottomNavState extends State<BottomNav> {
             BottomNavigationBarItem(
               icon: Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Icon(
+                child: Icon(size: 30,
                   _currentIndex == 1 ? Icons.favorite : Icons.favorite_border,
                   color: Colors.white,
                 ),
@@ -66,7 +66,7 @@ class _BottomNavState extends State<BottomNav> {
             BottomNavigationBarItem(
               icon: Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Icon(
+                child: Icon(size: 30,
                   _currentIndex == 2 ? Icons.shopping_cart : Icons.shopping_cart_outlined,
                   color: Colors.white,
                 ),
@@ -76,7 +76,7 @@ class _BottomNavState extends State<BottomNav> {
             BottomNavigationBarItem(
               icon: Padding(
                 padding: EdgeInsets.only(top: 10),
-                child: Icon(
+                child: Icon(size: 30,
                   _currentIndex == 3 ? Icons.person : Icons.person_2_outlined,
                   color: Colors.white,
                 ),

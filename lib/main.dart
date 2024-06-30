@@ -42,7 +42,8 @@ class Splash extends StatelessWidget {
             bottom: 100,
             left: 60,
             right: 60,
-            child: MyButton(col: buttoncolor,
+            child: MyButton(col: buttoncolor, width: 260,
+        height: 48,
             texsize: 16,
             isoutline: true,
             textcolor: buttoncolor,
@@ -50,7 +51,7 @@ class Splash extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomNav(),
+                      builder: (context) => HomeScreen(),
                     ),
                   );
                 },
