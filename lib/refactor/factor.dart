@@ -5,17 +5,23 @@ import 'package:flutter/widgets.dart';
 class MyCart extends StatefulWidget {
   final String name;
   final String img;
-  const MyCart({super.key, required this.name,required this.img});
+  const MyCart({super.key, required this.name, required this.img});
 
   @override
   State<MyCart> createState() => _MyCartState();
 }
 
 class _MyCartState extends State<MyCart> {
-  int num = 0;
+  int num = 1;
+  bool align = false;
   void add() {
     setState(() {
       num = num + 1;
+      if (num > 9) {
+        setState(() {
+          align = true;
+        });
+      }
     });
   }
 
@@ -23,6 +29,11 @@ class _MyCartState extends State<MyCart> {
     if (num != 0) {
       setState(() {
         num = num - 1;
+        if (num < 10) {
+          setState(() {
+            align = false;
+          });
+        }
       });
     }
   }
@@ -51,8 +62,7 @@ class _MyCartState extends State<MyCart> {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                image:  DecorationImage(
-                    image: AssetImage(widget.img)),
+                image: DecorationImage(image: AssetImage(widget.img)),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
@@ -78,28 +88,35 @@ class _MyCartState extends State<MyCart> {
               ),
             ),
             Positioned(
-              right: 0,
+              right: 5,
               top: 40,
               child: Container(
-                width: 80,
+                width: 70,
                 height: 30,
                 decoration: BoxDecoration(
                     border: Border.all(width: 1, color: Colors.black),
-                    borderRadius: BorderRadius.circular(50)
-                   ),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Stack(
                   children: [
                     Positioned(
-                    right: 35,
-                    bottom: -3,
-      
+                      right: 25,
+                      bottom: -3,
                       child: TextButton(
-                        onPressed: () {sub();},
-                        child: const Icon(Icons.minimize),
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
+                        onPressed: () {
+                          sub();
+                        },
+                        child: const Icon(
+                          Icons.minimize,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
-                    Positioned(right: 32,
-                    bottom: 2,
+                    Positioned(
+                      right: align ? 25 : 28,
+                      bottom: 2,
                       child: Text(
                         num.toString(),
                         style: const TextStyle(
@@ -110,16 +127,69 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ),
                     Positioned(
-                      left: 35,
-                    bottom: -10,
-                      child: TextButton(onPressed: () {add();}, child: const Icon(Icons.add))),
-                    
+                      left: 25,
+                      bottom: -10,
+                      child: TextButton(
+                        style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.transparent)),
+                        onPressed: () {
+                          add();
+                        },
+                        child: const Icon(
+                          Icons.add,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class MyText extends StatelessWidget {
+  final bool bold;
+  final String first;
+  final String second;
+  final Color col;
+  final double hor;
+  const MyText(
+      {super.key,
+      required this.bold,
+      required this.first,
+      required this.second,
+      required this.hor,
+      required this.col});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:  EdgeInsets.symmetric(horizontal: hor,vertical: 3),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            first,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: col,
+                fontFamily: "ansaf",
+                fontSize: 18),
+          ),
+          Text(
+            second,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: col,
+                fontFamily: "ansaf",
+                fontSize: 18),
+          )
+        ],
       ),
     );
   }

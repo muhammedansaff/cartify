@@ -15,10 +15,10 @@ void showToast(String message) {
   Fluttertoast.showToast(
     msg: message,
     toastLength: Toast.LENGTH_SHORT,
-    gravity:ToastGravity.SNACKBAR,
+    gravity: ToastGravity.SNACKBAR,
     timeInSecForIosWeb: 1,
-    backgroundColor:Colors.white,
-    textColor:primaryColor,
+    backgroundColor: Colors.white,
+    textColor: primaryColor,
     fontSize: 16.0,
   );
 }
@@ -105,8 +105,8 @@ class _CartScreenState extends State<CartScreen> {
                   Container(
                     height: 34,
                     child: MyButton(
-                      onPressed: (){
-                       showToast("promo code not available");
+                      onPressed: () {
+                        showToast("promo code not available");
                       }, // Call the function
                       text: "Apply",
                       col: primaryColor,
@@ -120,6 +120,45 @@ class _CartScreenState extends State<CartScreen> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            const MyText(
+                hor: 35,
+                bold: true,
+                first: "Price",
+                second: "₹12000.00",
+                col: Color(0xff717171)),
+            const MyText(
+                hor: 35,
+                bold: true,
+                first: "Discount",
+                second: "₹0",
+                col: Color(0xff717171)),
+            const MyText(
+                hor: 35,
+                bold: true,
+                first: "Shipping",
+                second: "₹100.00",
+                col: Color(0xff717171)),
+            const MyText(
+                hor: 35,
+                bold: true,
+                first: "Total Amount",
+                second: "₹12100.00",
+                col: Colors.black),
+            SizedBox(
+              height: 35,
+            ),
+            MyButton(
+                onPressed: () {},
+                text: "Proceed To Payment",
+                col: primaryColor,
+                textcolor: Colors.white,
+                isoutline: true,
+                height: 42,
+                width: 330,
+                texsize: 20)
           ],
         ),
       ),

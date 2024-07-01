@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cartify/refactor/mycard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,12 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+List img = [
+  "assets/banner/1.png",
+  "assets/banner/2.png",
+  "assets/banner/3.png"
+];
+
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +27,8 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.white,
         body: CustomScrollView(
           slivers: [
-            SliverAppBar(elevation: 5,
+            SliverAppBar(
+              elevation: 5,
               floating: true,
               pinned: false,
               snap: false,
@@ -45,12 +53,47 @@ class _MainScreenState extends State<MainScreen> {
             SliverToBoxAdapter(
               child: Column(
                 children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CarouselSlider.builder(
+                    options: CarouselOptions(
+                      height: 125,
+                      aspectRatio: 16 / 9,
+                      viewportFraction: 0.8,
+                      initialPage: 0,
+                      enableInfiniteScroll: true,
+                      reverse: false,
+                      autoPlay: true,
+                      autoPlayInterval: const Duration(seconds: 3),
+                      autoPlayAnimationDuration:
+                          const Duration(milliseconds: 800),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enlargeCenterPage: true,
+                      enlargeFactor: 0.3,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                    itemCount: img.length,
+                    itemBuilder: (BuildContext context, int itemIndex,
+                            int pageViewIndex) =>
+                        Container(
+                      width: 324.5,
+                      height: 125,
+                      decoration: BoxDecoration(color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage(img[itemIndex]),
+                          )),
+                    ),
+                  ),
                   SizedBox(
-                    height: 5,
+                    height: 15,
                   ),
                   Row(
                     children: [
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       const Text(
                         "New Arrivals",
                         style: TextStyle(
@@ -71,7 +114,9 @@ class _MainScreenState extends State<MainScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -101,7 +146,9 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   Row(
                     children: [
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       const Text(
                         "Category",
                         style: TextStyle(
@@ -122,7 +169,9 @@ class _MainScreenState extends State<MainScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -149,7 +198,9 @@ class _MainScreenState extends State<MainScreen> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(width: 180,),
+                      const SizedBox(
+                        width: 180,
+                      ),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
@@ -185,7 +236,9 @@ class _MainScreenState extends State<MainScreen> {
                       )
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),

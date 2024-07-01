@@ -46,7 +46,7 @@ class Splash extends StatelessWidget {
         height: 48,
             texsize: 16,
             isoutline: true,
-            textcolor: buttoncolor,
+            textcolor: Colors.white,
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
