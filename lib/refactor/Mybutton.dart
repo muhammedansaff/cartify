@@ -62,12 +62,12 @@ class MyButton extends StatelessWidget {
                     shadows: [
                       isoutline
                           ? Shadow(
-                              offset: Offset(2.0, 2.0),
+                              offset: const Offset(2.0, 2.0),
                               blurRadius: 0.0,
                               color: Colors.black.withOpacity(0.5),
                             )
                           : Shadow(
-                              offset: Offset(2.0, 2.0),
+                              offset: const Offset(2.0, 2.0),
                               blurRadius: 0,
                               color: Colors.black.withOpacity(0.5),
                             ),
@@ -104,7 +104,7 @@ class MyButton extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     shadows: [
                       Shadow(
-                          offset: Offset(2.0, 2.0),
+                          offset: const Offset(2.0, 2.0),
                           blurRadius: 3.0,
                           color: isoutline
                               ? Colors.black.withOpacity(0.5)

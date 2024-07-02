@@ -1,8 +1,7 @@
 import 'package:cartify/refactor/Mybutton.dart';
 import 'package:cartify/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Whistlist extends StatelessWidget {
   final String img;
@@ -14,7 +13,7 @@ class Whistlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
           width: 310,
           height: 136,

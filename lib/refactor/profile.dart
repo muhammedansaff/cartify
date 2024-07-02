@@ -20,7 +20,7 @@ class ProfileTile extends StatelessWidget {
       padding: const EdgeInsets.all(4.0),
       child: GestureDetector(
         onTap: onPressed,
-        child: Container(
+        child: SizedBox(
           height: 20,
           child: Row(
             children: [
@@ -35,7 +35,7 @@ class ProfileTile extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10,top: 1 ),
                 child: Text(
                   title,
-                  style: TextStyle(fontFamily: "ansaf", fontSize: 16),
+                  style: const TextStyle(fontFamily: "ansaf", fontSize: 16),
                 ),
               ),
               Padding(

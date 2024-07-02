@@ -1,6 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cartify/refactor/mycard.dart';
+import 'package:cartify/screens/arrival.dart';
+import 'package:cartify/screens/category.dart';
+import 'package:cartify/screens/popular.dart';
+import 'package:cartify/screens/search.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -42,7 +47,12 @@ class _MainScreenState extends State<MainScreen> {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SearchScreen()));
+                  },
                   icon: Icon(
                     Icons.search,
                     color: primaryColor,
@@ -79,32 +89,47 @@ class _MainScreenState extends State<MainScreen> {
                         Container(
                       width: 324.5,
                       height: 125,
-                      decoration: BoxDecoration(color: Colors.white,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
                             image: AssetImage(img[itemIndex]),
                           )),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
-                      const Text(
-                        "New Arrivals",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "ansaf",
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                      const Hero(
+                        tag: "arrival",
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            "New Arrivals",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "ansaf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                  transitionDuration:
+                                      const Duration(seconds: 2),
+                                  pageBuilder: (_, __, ___) =>
+                                      const arrivalscreen()));
+                        },
                         child: Text(
                           "See All",
                           style: TextStyle(
@@ -114,7 +139,7 @@ class _MainScreenState extends State<MainScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                     ],
@@ -141,25 +166,39 @@ class _MainScreenState extends State<MainScreen> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
-                      const Text(
-                        "Category",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "ansaf",
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                      Hero(
+                        tag: "category",
+                        child: Material(
+                          color: Colors.transparent,
+                          child: const Text(
+                            "Category",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "ansaf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                           Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                  transitionDuration:
+                                      const Duration(seconds: 2),
+                                  pageBuilder: (_, __, ___) =>
+                                      const Categoryscreen()));
+                        },
                         child: Text(
                           "See All",
                           style: TextStyle(
@@ -169,7 +208,7 @@ class _MainScreenState extends State<MainScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                     ],
@@ -190,19 +229,31 @@ class _MainScreenState extends State<MainScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
-                        "Popular",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "ansaf",
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                      const Hero(tag: "popular",
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            "Popular",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "ansaf",
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                       const SizedBox(
                         width: 180,
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                  transitionDuration:
+                                      const Duration(seconds: 2),
+                                  pageBuilder: (_, __, ___) =>
+                                      const PopularScreen()));},
+
                         child: Text(
                           "See All",
                           style: TextStyle(
@@ -236,7 +287,7 @@ class _MainScreenState extends State<MainScreen> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],

@@ -4,8 +4,7 @@ class Mytextfield extends StatelessWidget {
   final IconData? icon;
   final String hinttext;
   final String type;
-  const Mytextfield({Key? key, required this.icon, required this.hinttext,required this.type})
-      : super(key: key);
+  const Mytextfield({super.key, required this.icon, required this.hinttext,required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +52,7 @@ class Mytextfield extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hinttext,
           hintStyle: const TextStyle(color: Colors.grey, fontFamily: "ansaf"),
-          contentPadding: EdgeInsets.only(top: 5),
+          contentPadding: const EdgeInsets.only(top: 5),
           prefixIcon: Icon(icon, color: Colors.black),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),

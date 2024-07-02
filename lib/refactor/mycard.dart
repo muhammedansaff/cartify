@@ -1,7 +1,7 @@
 import 'package:cartify/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 
 class MyCard extends StatefulWidget {
   final String img;
@@ -19,6 +19,7 @@ class MyCard extends StatefulWidget {
       required this.productprice});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyCardState createState() => _MyCardState();
 }
 

@@ -1,6 +1,9 @@
-import 'package:cartify/pages/bottomnav.dart';
+
 import 'package:cartify/pages/homescreen.dart';
 import 'package:cartify/refactor/Mybutton.dart';
+
+import 'package:cartify/screens/payment.dart';
+import 'package:cartify/screens/popular.dart';
 import 'package:cartify/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,7 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
+    return  MaterialApp(debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+        // Set the default font family
+       fontFamily: 'ansaf',
+        
+       
+      ),
       title: "cartify",
       home: Splash(),
       
@@ -34,8 +43,8 @@ class Splash extends StatelessWidget {
           Center(
             child: SvgPicture.asset(
               'assets/login/logoo.svg',
-              width: 177,
-              height: 168,
+              width: 116,
+              height: 116,
             ),
           ),
           Positioned(
@@ -51,7 +60,7 @@ class Splash extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) =>  const arrivalscreen(),
                     ),
                   );
                 },

@@ -102,7 +102,7 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 34,
                     child: MyButton(
                       onPressed: () {
@@ -147,7 +147,7 @@ class _CartScreenState extends State<CartScreen> {
                 first: "Total Amount",
                 second: "₹12100.00",
                 col: Colors.black),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
             MyButton(

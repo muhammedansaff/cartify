@@ -1,6 +1,6 @@
 import 'package:cartify/refactor/whislist.dart';
 import 'package:cartify/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Favourites extends StatefulWidget {
