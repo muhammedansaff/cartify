@@ -3,7 +3,7 @@ import 'package:cartify/pages/homescreen.dart';
 import 'package:cartify/refactor/Mybutton.dart';
 
 import 'package:cartify/screens/payment.dart';
-import 'package:cartify/screens/popular.dart';
+import 'package:cartify/screens/newarrival.dart';
 import 'package:cartify/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
