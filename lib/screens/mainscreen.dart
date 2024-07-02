@@ -3,11 +3,13 @@ import 'package:cartify/refactor/mycard.dart';
 import 'package:cartify/screens/popular.dart';
 import 'package:cartify/screens/category.dart';
 import 'package:cartify/screens/newarrival.dart';
+import 'package:cartify/screens/progilescreen.dart';
 import 'package:cartify/screens/search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../utils/colors.dart';
 
@@ -45,6 +47,8 @@ class _MainScreenState extends State<MainScreen> {
                   color: primaryColor,
                 ),
               ),
+              title: SvgPicture.asset("assets/login/smalllogo.svg"),
+              centerTitle: true,
               actions: [
                 IconButton(
                   onPressed: () {
@@ -105,18 +109,15 @@ class _MainScreenState extends State<MainScreen> {
                       const SizedBox(
                         width: 20,
                       ),
-                      const Hero(
-                        tag: "arrival",
-                        child: Material(
-                          color: Colors.transparent,
-                          child: Text(
-                            "New Arrivals",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "ansaf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      const Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          "New Arrivals",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: "ansaf",
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       const Spacer(),
@@ -124,11 +125,8 @@ class _MainScreenState extends State<MainScreen> {
                         onTap: () {
                           Navigator.push(
                               context,
-                              PageRouteBuilder(
-                                  transitionDuration:
-                                      const Duration(seconds: 2),
-                                  pageBuilder: (_, __, ___) =>
-                                      const arrivalscreen()));
+                              MaterialPageRoute(
+                                  builder: (context) => const arrivalscreen()));
                         },
                         child: Text(
                           "See All",
@@ -174,29 +172,24 @@ class _MainScreenState extends State<MainScreen> {
                       const SizedBox(
                         width: 20,
                       ),
-                      Hero(
-                        tag: "category",
-                        child: Material(
-                          color: Colors.transparent,
-                          child: const Text(
-                            "Category",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "ansaf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      const Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          "Category",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: "ansaf",
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       const Spacer(),
                       GestureDetector(
                         onTap: () {
-                           Navigator.push(
+                          Navigator.push(
                               context,
-                              PageRouteBuilder(
-                                  transitionDuration:
-                                      const Duration(seconds: 2),
-                                  pageBuilder: (_, __, ___) =>
+                              MaterialPageRoute(
+                                  builder: (context) =>
                                       const Categoryscreen()));
                         },
                         child: Text(
@@ -229,31 +222,27 @@ class _MainScreenState extends State<MainScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Hero(tag: "popular",
-                        child: Material(
-                          color: Colors.transparent,
-                          child: Text(
-                            "Popular",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "ansaf",
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      const Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          "Popular",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: "ansaf",
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
                         width: 180,
                       ),
                       GestureDetector(
-                        onTap: () {Navigator.push(
+                        onTap: () {
+                          Navigator.push(
                               context,
-                              PageRouteBuilder(
-                                  transitionDuration:
-                                      const Duration(seconds: 2),
-                                  pageBuilder: (_, __, ___) =>
-                                      const PopularScreen()));},
-
+                              MaterialPageRoute(
+                                  builder: (context) => const ProfileScreen()));
+                        },
                         child: Text(
                           "See All",
                           style: TextStyle(
