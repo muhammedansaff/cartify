@@ -80,14 +80,14 @@ class MyButton extends StatelessWidget {
         : GestureDetector(
             onTap: onPressed,
             child: Container(
-              width: 260,
-              height: 48,
+              width: width,
+              height: height,
               decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(
                       color: Colors.black54,
-                      blurRadius: 5,
-                      spreadRadius: 2,
+                      blurRadius: 1,
+                      spreadRadius: 1,
                       offset: Offset(0, 2), // vertical shadow
                     ),
                   ],
@@ -104,8 +104,8 @@ class MyButton extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     shadows: [
                       Shadow(
-                          offset: const Offset(2.0, 2.0),
-                          blurRadius: 3.0,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 1.0,
                           color: isoutline
                               ? Colors.black.withOpacity(0.5)
                               : Colors.white),

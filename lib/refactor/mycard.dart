@@ -1,4 +1,4 @@
-import 'package:cartify/screens/productscreen.dart';
+import 'package:cartify/screens/product/productscreen.dart';
 import 'package:cartify/utils/colors.dart';
 
 import 'package:flutter/material.dart';
@@ -39,7 +39,7 @@ class _MyCardState extends State<MyCard> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => ProductScreen(
+                builder: (context) => ProductScreen(price: widget.productprice,
                       productname: widget.productname,
                       name: widget.productdetails,
                       img: widget.img,

@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cartify/refactor/mycard.dart';
-import 'package:cartify/screens/popular.dart';
-import 'package:cartify/screens/category.dart';
-import 'package:cartify/screens/newarrival.dart';
-import 'package:cartify/screens/progilescreen.dart';
-import 'package:cartify/screens/search.dart';
+import 'package:cartify/screens/product/popular.dart';
+import 'package:cartify/screens/product/category.dart';
+import 'package:cartify/screens/product/newarrival.dart';
+import 'package:cartify/mainpages/progilescreen.dart';
+import 'package:cartify/screens/profile/search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

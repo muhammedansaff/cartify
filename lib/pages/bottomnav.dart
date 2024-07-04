@@ -1,9 +1,9 @@
 
-import 'package:cartify/screens/cart.dart';
-import 'package:cartify/screens/favourites.dart';
+import 'package:cartify/mainpages/cart.dart';
+import 'package:cartify/mainpages/favourites.dart';
 
-import 'package:cartify/screens/mainscreen.dart';
-import 'package:cartify/screens/progilescreen.dart';
+import 'package:cartify/mainpages/mainscreen.dart';
+import 'package:cartify/mainpages/progilescreen.dart';
 import 'package:cartify/utils/colors.dart';
 import 'package:flutter/material.dart';
 

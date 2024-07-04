@@ -1,8 +1,10 @@
 import 'package:cartify/pages/homescreen.dart';
 import 'package:cartify/refactor/Mybutton.dart';
 import 'package:cartify/refactor/profile.dart';
-import 'package:cartify/screens/adress.dart';
-import 'package:cartify/screens/payment.dart';
+import 'package:cartify/screens/profile/Notification.dart';
+import 'package:cartify/screens/profile/adress.dart';
+import 'package:cartify/screens/payment/payment.dart';
+import 'package:cartify/screens/order/trackscreen.dart';
 import 'package:cartify/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +100,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: "Edit Profile",
                     onPressed: () {},
                   ),
-                  const Divider(color: Colors.black87,),
+                  const Divider(
+                    color: Colors.black87,
+                  ),
                   ProfileTile(
                     left: 203,
                     icon: Icons.lock_sharp,
@@ -122,10 +126,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 195.7,
                     icon: Icons.payment_outlined,
                     title: "Payment",
-                    onPressed: () {                      Navigator.push(
+                    onPressed: () {
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Payment()));},
+                              builder: (context) => const Payment()));
+                    },
                   ),
                 ],
               ),
@@ -158,7 +164,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 173,
                     icon: Icons.location_on_sharp,
                     title: "Track Order",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TrackScreen(ishistory: true)));
+                    },
                   ),
                   const SizedBox(
                     height: 5,
@@ -168,7 +179,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 159,
                     icon: Icons.history,
                     title: "Order History",
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TrackScreen(ishistory: false)));
+                    },
                   ),
                 ],
               ),
@@ -217,9 +232,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 163,
                     icon: Icons.notifications,
                     title: "Notifications",
-                    onPressed: () {
-
-                    },
+                    onPressed: () {Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NotificationScreen()));},
                   ),
                   const Divider(color: Colors.black87),
                   ProfileTile(
@@ -236,8 +252,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             MyButton(
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                 },
                 text: "Logout",
                 col: const Color.fromARGB(255, 247, 85, 73),
@@ -245,7 +263,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 isoutline: true,
                 height: 35,
                 width: 330,
-                texsize: 16), const SizedBox(
+                texsize: 16),
+            const SizedBox(
               height: 40,
             ),
           ],

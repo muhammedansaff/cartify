@@ -1,6 +1,6 @@
 import 'package:cartify/pages/homescreen.dart';
 import 'package:cartify/refactor/mycard.dart';
-import 'package:cartify/screens/mainscreen.dart';
+import 'package:cartify/mainpages/mainscreen.dart';
 import 'package:cartify/utils/colors.dart';
 import 'package:flutter/material.dart';
 

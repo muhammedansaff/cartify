@@ -1,3 +1,4 @@
+import 'package:cartify/screens/payment/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:cartify/refactor/Mybutton.dart';
 import 'package:cartify/refactor/factor.dart';
@@ -151,7 +152,7 @@ class _CartScreenState extends State<CartScreen> {
               height: 35,
             ),
             MyButton(
-                onPressed: () {},
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutScreen()));},
                 text: "Proceed To Payment",
                 col: primaryColor,
                 textcolor: Colors.white,
